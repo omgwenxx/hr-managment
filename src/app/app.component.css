@@ -1,0 +1,12 @@
+img {
+  float: right;
+  margin: 5px 5px 10px 0px;
+}
+
+.nav-list {
+  margin-top: 20px;
+}
+
+mat-sidenav-container {
+  height: 100%;
+}

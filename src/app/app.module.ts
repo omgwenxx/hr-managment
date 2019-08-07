@@ -11,7 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { EmployeeViewComponent } from './employee-view/employee-view.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
 import { SharedModule } from './shared/shared.module';
-import { NavComponent } from './nav/nav.component';
+import {MatDatepickerModule} from '@angular/material';
 
 const importModules = [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, ReactiveFormsModule, SharedModule];
 
@@ -22,11 +22,10 @@ const importModules = [BrowserModule, BrowserAnimationsModule, CustomMaterialMod
     DashboardComponent,
     HeaderComponent,
     EmployeeViewComponent,
-    ProjectViewComponent,
-    NavComponent
+    ProjectViewComponent
   ],
   imports: [
-    ...importModules, AppRoutingModule
+    ...importModules, AppRoutingModule, MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

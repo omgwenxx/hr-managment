@@ -1,12 +1,7 @@
 import { Component} from '@angular/core';
 import {Project} from './project';
+import {ProjectService} from './project.service';
 
-const ELEMENT_DATA: Project[] = [
-  {id: '1', name: 'Chewbacca', teamSize: 22, clientName: 'Parkside'},
-  {id: '1', name: 'Chewbacca', teamSize: 22, clientName: 'Parkside'},
-  {id: '1', name: 'Chewbacca', teamSize: 22, clientName: 'Parkside'},
-  {id: '1', name: 'Chewbacca', teamSize: 22, clientName: 'Parkside'}
-];
 @Component({
   selector: 'app-project-view',
   templateUrl: './project-view.component.html',
@@ -14,7 +9,18 @@ const ELEMENT_DATA: Project[] = [
 })
 export class ProjectViewComponent {
 
-  displayedColumns: string[] = ['id', 'name', 'teamSize', 'clientName'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['name', 'teamSize', 'clientName', 'actions'];
+  dataSource: Project[];
 
+  constructor(private projectService: ProjectService) {
+    this.dataSource = this.projectService.getAll();
+  }
+
+  updateProject(updateProject: Project) {
+    this.dataSource = this.projectService.update(updateProject);
+  }
+
+  deleteProject(deleteProject: Project) {
+    this.dataSource = this.projectService.delete(deleteProject);
+  }
 }
