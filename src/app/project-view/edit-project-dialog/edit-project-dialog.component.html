@@ -1,0 +1,22 @@
+<h3 mat-dialog-title>Editing Project</h3>
+
+<mat-dialog-content >
+  <form [formGroup]="projectForm">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" [value]="editProject.name">
+    </mat-form-field> <br>
+
+    <mat-form-field>
+      <input matInput placeholder="Client Name" formControlName="clientName" [value]="editProject.clientName">
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput placeholder="Teamsize" formControlName="teamSize" [value]="editProject.teamSize">
+    </mat-form-field><br>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="!projectForm.valid">Save</button>
+</mat-dialog-actions>

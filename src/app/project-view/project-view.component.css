@@ -2,7 +2,8 @@ table {
   width: 100%;
 }
 .add-button {
-  margin: 5px
+  margin: 5px;
+  width: 10em;
 }
 button {
   margin-left: 5px;

@@ -1,4 +1,4 @@
-<button mat-raised-button class="add-button" color="accent" >Add Project</button>
+<button mat-raised-button class="add-button" color="accent" (click)="openAddDialog()">Add Project</button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="name">
@@ -19,7 +19,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let element" >
-      <button md-raised-button (click)="updateProject(element)" >Edit</button>
+      <button md-raised-button (click)="openEditDialog(element)" >Edit</button>
       <button md-raised-button (click)="deleteProject(element)">Delete</button>
     </td>
   </ng-container>

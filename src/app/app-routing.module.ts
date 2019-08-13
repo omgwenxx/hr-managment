@@ -8,10 +8,10 @@ import {ProjectViewComponent} from './project-view/project-view.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent},
   { path: 'employees', component: EmployeeViewComponent},
   { path: 'projects', component: ProjectViewComponent},
-  { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

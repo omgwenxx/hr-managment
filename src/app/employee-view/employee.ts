@@ -1,11 +1,11 @@
 import {Project} from '../project-view/project';
 
-export class Employee {
+export interface Employee {
   id: number;
   name: string;
   company: string;
   age: number;
   birthday: Date;
   favoriteColor: string;
-  projects: Project[];
+  project?: Project;
 }

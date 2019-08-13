@@ -1,0 +1,39 @@
+<h3 mat-dialog-title>Adding Employee</h3>
+
+<mat-dialog-content >
+  <form [formGroup]="employeeForm">
+
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field> <br>
+
+    <mat-form-field>
+      <input matInput placeholder="Company" formControlName="company">
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Birthday (dd/mm/yyyy)" formControlName="birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <input matInput type="color" placeholder="Favorite Color" formControlName="color">
+    </mat-form-field><br>
+
+    <mat-form-field>
+      <mat-label>Project</mat-label>
+      <mat-select matInput placeholder="Project" formControlName="project" name="project">
+        <mat-option *ngFor="let project of projects" [value]="project">
+          {{project.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button"(click)="close()">Close</button>
+  <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="!employeeForm.valid">Save</button>
+</mat-dialog-actions>

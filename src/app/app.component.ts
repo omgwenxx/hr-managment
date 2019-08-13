@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hr-managment';
+  login: boolean;
+
+  constructor(private router: Router) {
+    this.login = false;
+  }
+
+  logout() {
+    this.login = false;
+    localStorage.setItem('authenticated', 'false');
+    this.router.navigateByUrl('login');
+  }
 }

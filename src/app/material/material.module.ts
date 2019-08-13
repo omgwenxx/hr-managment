@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import {
     MatButtonModule, MatCardModule, MatDialogModule, MatInputModule, MatTableModule,
     MatToolbarModule, MatMenuModule, MatIconModule, MatProgressSpinnerModule, MatListModule, MatSidenavModule, MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule, MatOptionModule, MatSelectModule
 } from '@angular/material';
+import {ReactiveFormsModule} from '@angular/forms';
 @NgModule({
     imports: [
         CommonModule,
@@ -20,7 +21,7 @@ import {
         MatListModule,
        MatSidenavModule,
       MatDatepickerModule,
-      MatNativeDateModule
+      MatNativeDateModule, MatOptionModule, MatSelectModule
     ],
     exports: [
         CommonModule,
@@ -36,7 +37,7 @@ import {
         MatListModule,
        MatSidenavModule,
       MatDatepickerModule,
-      MatNativeDateModule
+      MatNativeDateModule, MatOptionModule, MatSelectModule
     ],
 })
 export class CustomMaterialModule { }

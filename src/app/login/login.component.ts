@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   adminUsername = 'admin';
-  adminpassword = 'password';
+  adminPassword = 'password';
   loginForm = new FormGroup({
     username: new FormControl(null, [
       Validators.required
@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     localStorage.clear();
-    this.router.navigateByUrl('/dashboard');
   }
 
   login() {
@@ -34,9 +33,9 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    if (true) {
+    if (this.loginForm.value.username === this.adminUsername && this.loginForm.value.password === this.adminPassword) {
       localStorage.setItem('authenticated', 'true');
       this.router.navigateByUrl('/dashboard');
-    }
+     }
   }
 }

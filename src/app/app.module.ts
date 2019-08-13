@@ -5,27 +5,33 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { CustomMaterialModule } from './material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { EmployeeViewComponent } from './employee-view/employee-view.component';
 import { ProjectViewComponent } from './project-view/project-view.component';
 import { SharedModule } from './shared/shared.module';
-import {MatDatepickerModule} from '@angular/material';
+import {EmployeeViewModule} from './employee-view/employee-view.module';
+import { AddProjectDialogComponent } from './project-view/add-project-dialog/add-project-dialog.component';
+import { EditProjectDialogComponent } from './project-view/edit-project-dialog/edit-project-dialog.component';
+import {ProjectViewModule} from './project-view/project-view.module';
 
-const importModules = [BrowserModule, BrowserAnimationsModule, CustomMaterialModule, ReactiveFormsModule, SharedModule];
+const importModules = [
+  BrowserModule,
+  BrowserAnimationsModule,
+  CustomMaterialModule,
+  ReactiveFormsModule,
+  ProjectViewModule,
+  SharedModule];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    HeaderComponent,
-    EmployeeViewComponent,
-    ProjectViewComponent
+    HeaderComponent
   ],
   imports: [
-    ...importModules, AppRoutingModule, MatDatepickerModule
+    ...importModules, AppRoutingModule, FormsModule, EmployeeViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]

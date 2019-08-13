@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    window.setTimeout(() => {
+      if (localStorage.getItem('authenticated') === 'true') {
+        this.router.navigateByUrl('dashboard');
+      } else {
+        this.router.navigateByUrl('login');
+      }
+    }, 3000);
   }
 
 }

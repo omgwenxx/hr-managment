@@ -14,8 +14,12 @@ export class ProjectService {
   constructor() {
   }
 
-  public getAll(): Project[] {
+  getAll(): Project[] {
     return this.elements;
+  }
+
+  getProjectByName(name: string) {
+    return this.elements.filter(project => project.name === name);
   }
 
   delete(deleteProject: Project): Project[] {
@@ -32,5 +36,19 @@ export class ProjectService {
 
   createId(): number {
     return this.elements.length > 0 ? Math.max(...this.elements.map(project => project.id)) + 1 : 11;
+  }
+
+  add(project: Project): Project[] {
+    this.elements = [...this.elements, project];
+    return this.elements;
+  }
+
+  isEmpty(project) {
+    for (let key in project) {
+      if (project.hasOwnProperty(key)) {
+        return false;
+      }
+    }
+    return true;
   }
 }
