@@ -1,17 +1,8 @@
 .inline-block {
   display: inline-block;
   width: 30%;
-}
-
-.login {
-  width: 10rem;
-  height: 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 5rem;
-  position: relative;
-  border-radius: 5px;
+  margin-bottom: 5em;
+  margin-right: 5em;
 }
 
 .wrapper {

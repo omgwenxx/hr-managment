@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationStart, Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,24 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   login: boolean;
-
-  constructor(private router: Router) {
-    this.login = false;
-  }
+  showHead: boolean;
 
   logout() {
-    this.login = false;
     localStorage.setItem('authenticated', 'false');
+    this.showHead = false;
     this.router.navigateByUrl('login');
+  }
+
+  constructor(private router: Router) {
+    // on route change to '/login', set the variable showHead to false
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event.url === '/login') {
+          this.showHead = false;
+        } else {
+          this.showHead = true;
+        }
+      }
+    });
   }
 }

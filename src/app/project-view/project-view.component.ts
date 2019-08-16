@@ -3,7 +3,6 @@ import {Project} from './project';
 import {ProjectService} from './project.service';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {AddProjectDialogComponent} from './add-project-dialog/add-project-dialog.component';
-import {EditEmployeeDialogComponent} from '../employee-view/edit-employee-dialog/edit-employee-dialog.component';
 import {EditProjectDialogComponent} from './edit-project-dialog/edit-project-dialog.component';
 
 @Component({

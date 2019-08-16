@@ -22,6 +22,10 @@ export class ProjectService {
     return this.elements.filter(project => project.name === name);
   }
 
+  getProjectById(id: number) {
+    return this.elements.filter(project => project.id === id);
+  }
+
   delete(deleteProject: Project): Project[] {
     this.elements = this.elements.filter(employee => employee.id !== deleteProject.id);
     return this.elements;

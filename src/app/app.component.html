@@ -2,15 +2,14 @@
   <mat-sidenav #sidenav>
     <img width=20 src="./assets/images/close.png" (click)="sidenav.toggle()">
     <mat-nav-list class="nav-list">
-      <a mat-list-item [routerLink]="'/employees'"> Employees </a>
-      <a mat-list-item [routerLink]="'/projects'"> Projects </a>
+      <a mat-list-item [routerLink]="'employees'"> Employees </a>
+      <a mat-list-item [routerLink]="'projects'"> Projects </a>
       <a mat-list-item (click) = 'logout()'> Logout </a>
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 88vh;">
-      <app-header (toggleClick)="sidenav.toggle()"></app-header>
+      <app-header (toggleClick)="sidenav.toggle()" *ngIf="showHead"></app-header>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -18,4 +18,6 @@ export class HeaderComponent {
     this.toggleClick.emit(!this.openSidebar);
     this.openSidebar = !this.openSidebar;
   }
+
+
 }

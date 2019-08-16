@@ -6,18 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { CustomMaterialModule } from './material/material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { ProjectViewComponent } from './project-view/project-view.component';
 import { SharedModule } from './shared/shared.module';
 import {EmployeeViewModule} from './employee-view/employee-view.module';
-import { AddProjectDialogComponent } from './project-view/add-project-dialog/add-project-dialog.component';
-import { EditProjectDialogComponent } from './project-view/edit-project-dialog/edit-project-dialog.component';
 import {ProjectViewModule} from './project-view/project-view.module';
+import {DashboardModule} from './dashboard/dashboard.module';
 
 const importModules = [
   BrowserModule,
   BrowserAnimationsModule,
+  DashboardModule,
   CustomMaterialModule,
   ReactiveFormsModule,
   ProjectViewModule,
@@ -27,7 +25,6 @@ const importModules = [
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     HeaderComponent
   ],
   imports: [
