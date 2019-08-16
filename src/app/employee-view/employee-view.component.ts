@@ -5,6 +5,8 @@ import {Router} from '@angular/router';
 import {MatDialog, MatDialogConfig} from '@angular/material';
 import {AddEmployeeDialogComponent} from './add-employee-dialog/add-employee-dialog.component';
 import {EditEmployeeDialogComponent} from './edit-employee-dialog/edit-employee-dialog.component';
+import {Project} from '../project-view/project';
+import {ProjectService} from '../project-view/project.service';
 
 @Component({
   selector: 'app-employee-view',
@@ -15,16 +17,15 @@ export class EmployeeViewComponent {
   displayedColumns: string[] = ['name', 'company', 'age', 'favoriteColor', 'project' , 'actions'];
   dataSource: Employee[];
 
-  constructor(private employeeService: EmployeeService, private router: Router, public dialog: MatDialog) {
+  constructor(private employeeService: EmployeeService,
+              private router: Router,
+              public dialog: MatDialog,
+              private projectService: ProjectService) {
     this.dataSource = employeeService.getAll();
   }
 
   deleteEmployee(employee: Employee) {
     this.dataSource = this.employeeService.delete(employee);
-  }
-
-  updateEmployee(employee: Employee) {
-    this.router.navigateByUrl('/' + employee.id);
   }
 
   openAddDialog() {
@@ -54,12 +55,16 @@ export class EmployeeViewComponent {
         age: editEmployee.age,
         birthday: editEmployee.birthday,
         favoriteColor: editEmployee.favoriteColor,
-        project: editEmployee.project}});
+        projectId: editEmployee.projectId}});
 
     dialogRef.afterClosed().subscribe(employee => {
       if (!this.employeeService.isEmpty(employee)) {
         this.dataSource = this.employeeService.update(employee);
       }
     });
+  }
+
+  getProjectById(projectId: number): Project {
+    return this.projectService.getProjectById(projectId)[0];
   }
 }

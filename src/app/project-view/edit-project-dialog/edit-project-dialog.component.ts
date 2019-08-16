@@ -26,10 +26,9 @@ export class EditProjectDialogComponent implements OnInit {
       Validators.required,
       Validators.minLength(3)
     ]));
-    this.projectForm.addControl('teamSize', new FormControl(null, [
+    this.projectForm.addControl('teamSize', new FormControl(0, [
       Validators.required,
-      Validators.pattern('^[0-9]*$'),
-      Validators.minLength(1),
+      Validators.pattern('^[0-9]*$')
     ]));
     this.editProject = {
       id: this.data.id,

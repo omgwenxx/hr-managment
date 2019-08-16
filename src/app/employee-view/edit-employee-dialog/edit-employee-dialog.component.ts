@@ -72,7 +72,7 @@ export class EditEmployeeDialogComponent implements OnInit {
       age: this.employeeService.calculateAge(employee.birthday),
       birthday: employee.birthday,
       favoriteColor: employee.color,
-      project: updatedProject});
+      projectId: updatedProject.id});
     this.projectService.update(updatedProject);
   }
 }
