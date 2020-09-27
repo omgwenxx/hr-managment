@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import {Project} from './project';
 import {ProjectService} from './project.service';
-import {MatDialog, MatDialogConfig} from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {AddProjectDialogComponent} from './add-project-dialog/add-project-dialog.component';
 import {EditProjectDialogComponent} from './edit-project-dialog/edit-project-dialog.component';
 

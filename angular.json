@@ -119,5 +119,8 @@
       }
     }
   },
-  "defaultProject": "hr-managment"
+  "defaultProject": "hr-managment",
+  "cli": {
+    "analytics": "58b371b8-cc7f-4382-a783-eda5974282e8"
+  }
 }

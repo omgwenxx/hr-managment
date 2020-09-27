@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Employee} from './employee';
 import {EmployeeService} from './employee.service';
 import {Router} from '@angular/router';
-import {MatDialog, MatDialogConfig} from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {AddEmployeeDialogComponent} from './add-employee-dialog/add-employee-dialog.component';
 import {EditEmployeeDialogComponent} from './edit-employee-dialog/edit-employee-dialog.component';
 import {Project} from '../project-view/project';

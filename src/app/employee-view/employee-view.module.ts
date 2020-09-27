@@ -5,8 +5,6 @@ import {AddEmployeeDialogComponent} from './add-employee-dialog/add-employee-dia
 import {CustomMaterialModule} from '../material/material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditEmployeeDialogComponent } from './edit-employee-dialog/edit-employee-dialog.component';
-import {MatOptionModule} from '@angular/material';
-import {MatSelectModule} from '@angular/material/typings/select';
 
 @NgModule({
   declarations: [EmployeeViewComponent, AddEmployeeDialogComponent, EditEmployeeDialogComponent],
